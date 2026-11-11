@@ -1,0 +1,12 @@
+
+
+CATATAN PERBAIKAN 11 NOVEMBER 2026
+---------------------------------
+- Paket ini TIDAK mengubah struktur database dan TIDAK memerlukan import SQL baru.
+- Jangan import ulang file SQL jika ingin mempertahankan data yang sudah ada.
+- Tidak ada referensi ke kolom urgensi_dikunci.
+- Status pengaduan mengikuti alur naik: baru -> pending -> diproses -> selesai/ditolak; status tidak dapat diturunkan ke tahap sebelumnya.
+- Urgensi hanya dapat dinaikkan (rendah -> sedang -> tinggi), tidak dapat diturunkan.
+- Daftar aspirasi admin memiliki filter kategori, lokasi, siswa/pelapor, status, dan rentang tanggal.
+- Biaya yang diinput admin pada penanganan ditampilkan di detail admin dan riwayat/detail siswa.
+- Jika tabel feedback belum ada pada database lama, halaman daftar pengaduan dan proses hapus tidak akan gagal hanya karena tabel tersebut tidak tersedia.

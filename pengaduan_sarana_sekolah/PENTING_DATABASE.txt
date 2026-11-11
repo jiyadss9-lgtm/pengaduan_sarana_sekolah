@@ -1,0 +1,21 @@
+PENTING - DATABASE
+
+Nama database yang digunakan aplikasi:
+pengaduan_sarana_sekolah
+
+File SQL versi perbaikan tersedia di folder ../database/:
+- pengaduan_sarana_sekolah_fixed.sql untuk instalasi database baru.
+- patch_feedback.sql untuk memperbaiki database lama tanpa menghapus data.
+
+Temuan dari pemeriksaan:
+Dump SQL awal belum memiliki tabel `feedback`, padahal aplikasi mengakses tabel
+tersebut pada model/feedback.php, view/admin/feedback.php, dan saat penghapusan
+pengaduan. Tabel tersebut sudah ditambahkan pada SQL versi perbaikan.
+
+Konfigurasi koneksi ada di config/koneksi.php:
+host localhost, user root, password kosong, database pengaduan_sarana_sekolah.
+Sesuaikan jika konfigurasi XAMPP berbeda.
+
+Catatan pengujian:
+Semua file PHP pada arsip yang diperiksa lolos pemeriksaan sintaks PHP.
+Pengujian runtime perlu dilakukan setelah database diimpor dan Apache/MySQL XAMPP aktif.
